@@ -18,6 +18,7 @@ func modifyUser(users map[string]map[string]string, name string) {
 		users[name] = make(map[string]string, 2)
 		users[name]["pwd"] = "888888"
 		users[name]["nickname"] = "昵称~" + name //示意
+
 	}
 }
 

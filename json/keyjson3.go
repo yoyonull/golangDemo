@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"reflect"
 )
 
 // Actress3 女演员
@@ -30,6 +31,7 @@ func main() {
 
 	var Actress3 Actress3
 	err := json.Unmarshal(jsonData, &Actress3)
+
 	if err != nil {
 		fmt.Println("error:", err)
 		return
@@ -41,4 +43,10 @@ func main() {
 	for _, val := range Actress3.Opus {
 		fmt.Println("\t", val)
 	}
+
+	fmt.Println(reflect.TypeOf(Actress3.Opus))
+	for _, val := range Actress3.Opus {
+		fmt.Printf("%s", val)
+	}
+
 }

@@ -30,12 +30,17 @@ func unjsonStruct() {
 func unjsonMap() {
 	testMap := make(map[string]interface{})
 	fmt.Println("unjson before： ", testMap)
-	var str = "{\"addr\":\"beijing\",\"age\":123,\"name\":\"typ\"}"
+	var str = "{\"addr\":\"beijing\",\"age\":123,\"name\":\"type\"}"
 	err := json.Unmarshal([]byte(str), &testMap)
 	if err != nil {
 		fmt.Println("unjson 失败")
 	}
 	fmt.Println("unjson after： ", testMap)
+	for index, v := range testMap {
+		fmt.Printf("\t日期：%s -- %s \n", index, v)
+		//fmt.Printf("\t\t分类：%s\n", value.Type)
+		//fmt.Printf("\t\t标题：%s\n", value.Title)
+	}
 }
 
 func unjsonSlice() {
@@ -48,6 +53,11 @@ func unjsonSlice() {
 		fmt.Println("unjson 失败")
 	}
 	fmt.Println("unjson after： ", sli)
+	for index, v := range sli {
+		fmt.Printf("\t信息：%d -- %s \n", index, v)
+		//fmt.Printf("\t\t分类：%s\n", value.Type)
+		//fmt.Printf("\t\t标题：%s\n", value.Title)
+	}
 }
 
 func main() {

@@ -9,9 +9,9 @@ func main() {
 
 	tt := []byte("this is test")
 
-	fmt.Println(tt)                 //[116 104 105 115 32 105 115 32 116 101 115 116]
-	fmt.Sprintf("this is %s", tt)   // 空空如也 wuio输出
-	fmt.Printf("this iss %s\n", tt) //this iss this is test
+	fmt.Println(tt)                //[116 104 105 115 32 105 115 32 116 101 115 116]
+	fmt.Sprintf("this is %s", tt)  // 空空如也 wuio输出
+	fmt.Printf("that is %s\n", tt) //this iss this is test
 
 	//还有中转换
 	strtt := fmt.Sprintf("%s", tt)
@@ -30,12 +30,18 @@ func main() {
 	b["age"] = 11
 	slice = append(slice, b)
 
+	for index, value := range slice {
+		fmt.Printf("%d--%s--%s\n", index, value)
+	}
+
 	data, _ := json.Marshal(slice)
 	fmt.Println(data)
 	fmt.Printf("slice序列化的结果%v\n", string(data))
 	//dd :="[{\"age\":1,\"name\":\"chen\",\"sex\":\8"male\"},{\"age\":11,\"name\":\"高\",\"sex\":\"female\"}]\n"
-	json.Unmarshal([]byte(data), &slice)
-	//fmt.Println(data)
+	json.Unmarshal([]byte(data), slice)
+	fmt.Println(string(data))
 	fmt.Printf("反序列化的俄结果%v\n", string(data))
+
+	//c:=make([]int,5,10)
 
 }

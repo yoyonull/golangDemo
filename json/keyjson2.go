@@ -37,6 +37,7 @@ func main() {
          }
       ]
    }`)
+
 	var Actress2 Actress2
 	err := json.Unmarshal(jsonData, &Actress2)
 	if err != nil {
@@ -49,5 +50,8 @@ func main() {
 	fmt.Println("作品：")
 	for _, val := range Actress2.Opus2 {
 		fmt.Printf("\t%s - %s\n", val.Date, val.Title)
+	}
+	for _, val := range Actress2.Opus2 {
+		fmt.Printf("%s", val)
 	}
 }

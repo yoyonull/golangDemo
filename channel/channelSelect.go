@@ -14,6 +14,7 @@ func main() {
 	for i := 0; i < 10; i++ {
 		intChan <- i
 	}
+
 	//2.定义一个管道 5个数据string
 	stringChan := make(chan string, 5)
 	for i := 0; i < 5; i++ {
